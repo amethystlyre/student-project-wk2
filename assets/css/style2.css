@@ -1,0 +1,123 @@
+:root {
+    --bgcolor: rgb(0, 0, 0);
+    --textlight: rgb(186, 238, 241);
+    --textdark: rgb(33, 25, 130);
+    --borderglow: rgb(64, 8, 249);
+    --bordercolor: rgb(255, 255, 255);
+    --themecolor:rgb(239, 163, 245);
+
+}
+
+body {
+    background-color: var(--bgcolor);
+}
+
+header {
+    width: 100%;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    color: var(--textlight);
+    font-size: 200%;
+}
+
+.page-description {
+    width: 60%;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    color: var(--textlight);
+}
+
+#card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: space-between;
+    justify-content: center;
+    /* border: 2px dashed var(--bordercolor); */
+}
+
+.card-column {
+    flex: 0 0 33%;
+    width: 30%;
+    margin: 10px 0px;
+    padding: 10px;
+    transition: all 2s linear;
+}
+
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 5px;
+    color: var(--textlight);
+    border: 2px dashed var(--bordercolor);
+}
+
+.code-card h2 {
+    border: 2px solid var(--themecolor);
+    border-radius: 8px;
+    display: block;
+    width: auto;
+    position: relative;
+    margin-top: -25px;
+    padding: 5px;
+    background-color: var(--bgcolor);
+    color: var(--textlight);
+    text-align: center;
+    font-size: 150%;
+}
+
+.code-card p {
+    color: var(--textlight);
+    padding: 10px;
+    margin: 10px;
+}
+
+.code-card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 10px 10px;
+    color: var(--textdark);
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(to bottom right, rgb(239, 163, 245), rgb(133, 137, 208), rgb(145, 232, 174));
+    flex-grow: 1;
+}
+
+.code-card:hover,.code-card:hover h2 {
+    box-shadow: inset 0px 0px 8px var(--borderglow), 0 0 15px var(--borderglow);
+}
+
+footer p {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: var(--textlight);
+    font-size: 120%;
+}
+
+@media screen and (max-width:992px) {
+    .card-column {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width:650px) {
+    .card-column {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}

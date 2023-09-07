@@ -1,0 +1,137 @@
+:root{
+    --bgcolor:rgb(0, 0, 0);
+    --textlight:rgb(186, 238, 241);
+    --textdark:rgb(31, 23, 121);
+    --border:rgb(141, 25, 141);
+
+}
+
+body{
+  background-color: var(--bgcolor);
+}
+
+header{
+  width: 100%;
+}
+
+
+h1{
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    color:var(--textlight);
+}
+
+.page-description{
+    width: 60%;
+    margin:10px auto ;
+    text-align: center;
+    padding: 10px;
+    color:var(--textlight);
+}
+
+#card-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+  border: dashed 1px blue;
+}
+
+.code-card h2 {
+  /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+  color:var(--textlight);
+  border: 2px solid red;
+  display: block;
+  width: auto;
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  padding: 5px;
+  background-color: black;
+  color: var(--textlight);
+  text-align: center;
+
+}
+
+.code-card p{
+  color:var(--textlight);
+  padding:10px;
+  margin: 10px;
+}
+
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: white;
+
+}
+
+.code-card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: darkblue;
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(to bottom right, rgb(239, 163, 245), rgb(133, 137, 208), rgb(145, 232, 174));
+
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+.cards p {
+    padding: 10px;
+    margin: 10px;
+}
+
+footer p {
+  text-align: center;
+  margin: auto;
+  color:var(--textlight);
+}
+
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+} 
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 100%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  } 
+}
+
